@@ -1,0 +1,8 @@
+insert into public.product(name, slug, description, category)
+  values ('The Web Design Book', 'web-design', 'Introducing "The Web Design Book," your ultimate guide to mastering the art of crafting visually stunning and user-friendly websites. Packed with expert tips, step-by-step tutorials, and industry insights, this comprehensive resource is perfect for beginners and seasoned designers alike.', 'design');
+
+insert into public.product(name, slug, description, category)
+  values ('Blender Basics Course', 'blender-course', 'Introducing the Blender Basics Course, a comprehensive learning experience designed to teach beginners the essential techniques for creating stunning 3D models and animations using Blender. Master the fundamentals of this powerful software in no time, and unleash your creativity through hands-on exercises and expert guidance.', 'graphics');
+
+insert into public.product(name, slug, description, category)
+  values ('The Frontend Bootcamp', 'frontend-bootcamp', 'The Frontend Bootcamp is an immersive, hands-on course designed to teach aspiring developers the essential skills and tools required to build visually stunning and user-friendly websites and applications. Dive into the world of HTML, CSS, JavaScript, and modern frameworks as you create responsive, accessible designs and learn industry best practices to kick-start your career in web development.', 'coding');

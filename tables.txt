@@ -1,0 +1,21 @@
+table profile {
+  name (text) nullable
+  email (text) nullable
+  stripe_customer_id (text) nullable
+  subscription_status (text) nullable
+  price (text) nullable
+  user_id (uuid -> auth.users.id) nullable
+}
+
+table product {
+  name (text) required
+  slug (text) required
+  description (text) nullable
+  category (text)
+  product_content_id (int8 -> product_content.id) nullable
+}
+
+table product_content {
+  video_url (text)
+  download_url (text)
+}
