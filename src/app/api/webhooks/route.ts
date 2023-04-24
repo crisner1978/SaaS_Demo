@@ -1,6 +1,6 @@
 import { IncomingMessage } from 'http'
 import { headers } from 'next/headers'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import getRawBody from 'raw-body'
 import { stripe } from 'src/pricing/utils/stripe'
 import { Readable } from 'stream'
@@ -13,7 +13,7 @@ interface Request extends IncomingMessage {
   readonly body: string
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest & { body: Request }) {
   const headerList = headers()
   const signature = headerList.get('stripe-signature')
   const signingSecret = process.env.STRIPE_SIGNING_SECRET!
