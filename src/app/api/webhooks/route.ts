@@ -9,11 +9,11 @@ import { supabase } from 'supabase'
 
 type EventType = Record<string, any>
 
-interface RequestWithRawBody extends IncomingMessage {
+interface Request extends IncomingMessage {
   readonly body: string
 }
 
-export async function POST(request: RequestWithRawBody) {
+export async function POST(request: Request) {
   const headerList = headers()
   const signature = headerList.get('stripe-signature')
   const signingSecret = process.env.STRIPE_SIGNING_SECRET!
