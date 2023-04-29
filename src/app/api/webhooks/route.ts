@@ -15,6 +15,7 @@ interface Request extends IncomingMessage {
 
 export async function POST(request: NextRequest & { body: Request }) {
   const headerList = headers()
+  const body: IncomingMessage = request.body
   const signature = headerList.get('stripe-signature')
   const signingSecret = process.env.STRIPE_SIGNING_SECRET!
 
